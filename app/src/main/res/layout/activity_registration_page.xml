@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2b597e"
+    android:padding="20dp"
+    tools:context=".RegistrationPage">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textSize="20dp"
+            />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter your username here"
+            />
+
+        <TextView
+            android:id="@+id/pass"
+            android:textSize="20dp"
+            android:paddingTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password" />
+
+        <EditText
+            android:id="@+id/editText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberPassword"
+            android:hint="Enter your password here"
+            />
+        <TextView
+            android:id="@+id/confirm_pass"
+            android:textSize="20dp"
+            android:paddingTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Confirm Password" />
+
+        <EditText
+            android:id="@+id/editText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="numberPassword"
+            android:hint="@string/confirm_pass"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textSize="20dp"
+                android:paddingTop="20dp"
+                android:id="@+id/account"
+                android:layout_width="0dp"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content"
+                android:layout_toLeftOf="@id/radio"
+                android:text="CREATE ACCOUNT AS :"
+                />
+
+            <RadioGroup
+                android:layout_alignParentRight="true"
+                android:id="@+id/radio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <RadioButton
+                    android:id="@+id/teacher"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="TEACHER" />
+                <RadioButton
+                    android:id="@+id/student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="STUDENT" />
+            </RadioGroup>
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/cancel_button_id"
+                android:layout_alignParentLeft="true"
+                android:layout_width="100dp"
+                android:background="#251010"
+                android:textColor="#897d7d"
+                android:layout_height="wrap_content"
+                android:text="cancel" />
+
+            <Button
+                android:id="@+id/register_button_id"
+                android:layout_width="100dp"
+                android:background="#1c4818"
+                android:textColor="#ccb3b3"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="Register" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
