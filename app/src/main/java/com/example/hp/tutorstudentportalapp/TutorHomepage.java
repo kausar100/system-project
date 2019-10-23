@@ -48,7 +48,7 @@ public class TutorHomepage extends AppCompatActivity {
                     case R.id.main:
                         //Toast.makeText(TutorHomepage.this, "main", Toast.LENGTH_SHORT).show();
                         Intent intent1 = new Intent(TutorHomepage.this,YearActivity.class);
-                        startActivity(intent1);
+                        startActivity(intent1 );
                         break;
                     case R.id.advisor:
                         Toast.makeText(TutorHomepage.this,"Advisor",Toast.LENGTH_SHORT).show();

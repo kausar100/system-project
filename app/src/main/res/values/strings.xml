@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">TutorStudent PortalApp</string>
     <string name="exit">Are you sure you want to exit?</string>
-    <string name="confirm_pass">Retype your password here</string>
+    <string name="email_info">Enter your Email here</string>
+    <string name="pass_info">Enter your password here</string>
+    <string name="confirm_pass_info">Retype your password here</string>
     <string name="start_app">Welcome to Tutor Student PORTAL Application</string>
     <string name="Open">open</string>
     <string name="Close">close</string>
