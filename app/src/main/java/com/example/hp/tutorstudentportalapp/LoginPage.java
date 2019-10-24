@@ -20,6 +20,7 @@ public class LoginPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
+        this.setTitle("Welcome to Login Page");
         button1 = (Button) findViewById(R.id.login_button_id);
         button2 = (Button) findViewById(R.id.cancel_button_id);
         button3 = (Button) findViewById(R.id.go_register_id);

@@ -1,12 +1,15 @@
 <resources>
-    <string name="app_name">TutorStudent PortalApp</string>
+    <string name="app_name">TeacherStudentPortal</string>
     <string name="exit">Are you sure you want to exit?</string>
     <string name="email_info">Enter your Email here</string>
     <string name="pass_info">Enter your password here</string>
     <string name="confirm_pass_info">Retype your password here</string>
-    <string name="start_app">Welcome to Tutor Student PORTAL Application</string>
+    <string name="start_app">Welcome to Teacher Student PORTAL Application</string>
     <string name="Open">open</string>
     <string name="Close">close</string>
+    <string name="about">This app is made for Education purpose.It helps Students and Teachers Communicate easily.\n\nTeachers here are act as Admin. He has the rights to monitor his Students progress. He can post anything related with his given course.\n\nHere A Teacher Can see Student Grade.\nBoth Teacher and Student can see Class Routine, it will notify them. \n\nTeacher can send 60% attendence missing warning to a particular student. Those particular student will be able to receive and perform his action to complete his attendance. In fact, this app act like a bridge among Students and Teachers.</string>
+    <string name="tac">1. For Student Account You Have To Be A University Student.\n\n2. For Teacher Account You Have To Be A University Teacher.</string>
+    <string name="contacts">Name:\nMd. Golam Kaochhar\nSatyajit Paul\n\nAddress :\nRashid Hall, Khulna University of Engineering &amp; Technology(KUET) Khulna-9203,Bangladesh\n\nMobile :\n01745252229\n01516145753\n\nEmail :\nkaochhar1607100@stud.kuet.ac.bd\npaul1607115@stud.kuet.ac.bd</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

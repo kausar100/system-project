@@ -1,26 +1,23 @@
 package com.example.hp.tutorstudentportalapp;
 
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 
+public class TACFragment extends Fragment {
 
-public class Routine_Fragment extends Fragment {
-
-    public Routine_Fragment() {
+    public TACFragment() {
         // Required empty public constructor
     }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_routine_, container, false);
+        return inflater.inflate(R.layout.fragment_tac, container, false);
     }
-
 
 }

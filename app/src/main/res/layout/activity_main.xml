@@ -10,28 +10,17 @@
     android:gravity="center_vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <TextView
+        <fragment
+            android:name="com.example.hp.tutorstudentportalapp.HomeFragment"
+            android:id="@+id/place_holder"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/start_app"
-            android:textAllCaps="true"
-            android:textSize="25dp"
-            android:textStyle="bold"
-            android:gravity="center"
-            android:padding="15dp"
-            android:textColor="#0c1231"/>
+            android:layout_height="match_parent"/>
 
-        <ImageView
-            android:id="@+id/image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/navigation_icon" />
+    </LinearLayout>
 
-    </RelativeLayout>
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nv"

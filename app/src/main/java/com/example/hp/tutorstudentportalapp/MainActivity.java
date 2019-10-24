@@ -1,5 +1,8 @@
 package com.example.hp.tutorstudentportalapp;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -12,7 +15,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private DrawerLayout dl;
@@ -23,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setTitle("Home Page");
 
         dl = (DrawerLayout) findViewById(R.id.homepage);
         t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
@@ -46,13 +49,25 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         break;
                     case R.id.tac:
-                        Toast.makeText(MainActivity.this, "Terms and Conditions", Toast.LENGTH_SHORT).show();
+                        Fragment fragment = (Fragment)new TACFragment();
+                        FragmentManager fragmentManager = getFragmentManager();
+                        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                        fragmentTransaction.replace(R.id.place_holder,fragment);
+                        fragmentTransaction.commit();
                         break;
                     case R.id.contact:
-                        Toast.makeText(MainActivity.this, "Contacts", Toast.LENGTH_SHORT).show();
+                        Fragment fragment1 = (Fragment)new ContactsFragment();
+                        FragmentManager fragmentManager1 = getFragmentManager();
+                        FragmentTransaction fragmentTransaction1 = fragmentManager1.beginTransaction();
+                        fragmentTransaction1.replace(R.id.place_holder,fragment1);
+                        fragmentTransaction1.commit();
                         break;
                     case R.id.about:
-                        Toast.makeText(MainActivity.this, "About", Toast.LENGTH_SHORT).show();
+                        Fragment fragment2 = (Fragment)new AboutFragment();
+                        FragmentManager fragmentManager2 = getFragmentManager();
+                        FragmentTransaction fragmentTransaction2 = fragmentManager2.beginTransaction();
+                        fragmentTransaction2.replace(R.id.place_holder,fragment2);
+                        fragmentTransaction2.commit();
                         break;
                 }
                 dl.closeDrawer(GravityCompat.START);

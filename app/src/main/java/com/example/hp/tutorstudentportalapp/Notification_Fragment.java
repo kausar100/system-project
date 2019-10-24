@@ -10,7 +10,9 @@ import android.view.ViewGroup;
 
 public class Notification_Fragment extends Fragment {
 
-
+    public Notification_Fragment() {
+        // Required empty public constructor
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

@@ -12,6 +12,7 @@ public class YearActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_year);
+        this.setTitle("Term & semester");
 
         first1 = findViewById(R.id.first1);
         first2 = findViewById(R.id.first2);

@@ -19,6 +19,7 @@ public class RegistrationPage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration_page);
+        this.setTitle("Welcome To Registration Page");
 
         button1 = findViewById(R.id.cancel_button_id);
         button2 = findViewById(R.id.register_button_id);

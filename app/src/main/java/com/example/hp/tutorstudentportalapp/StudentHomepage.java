@@ -26,6 +26,7 @@ public class StudentHomepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_student_homepage);
+        this.setTitle("Welcome to Student Homepage");
 
         dl = findViewById(R.id.drawer_layout);
         nv = findViewById(R.id.nav_view);

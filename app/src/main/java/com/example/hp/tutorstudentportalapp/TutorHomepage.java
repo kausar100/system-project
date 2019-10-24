@@ -26,6 +26,7 @@ public class TutorHomepage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutor_homepage);
+        this.setTitle("Welcome to Teacher Homepage");
 
         dl = findViewById(R.id.drawer_layout);
         nv = findViewById(R.id.nav_view);
