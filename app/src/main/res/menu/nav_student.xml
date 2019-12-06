@@ -7,18 +7,28 @@
             android:id="@+id/profile"
             android:icon="@drawable/ic_profile_circle_black_24dp"
             android:title="Profile" />
+
         <item
-            android:id="@+id/advisor"
+            android:id="@+id/message"
             android:icon="@drawable/ic_supervisor_account_black_24dp"
-            android:title="Advisor" />
+            android:title="Message" />
+
         <item
-            android:id="@+id/supervisor"
+            android:id="@+id/notification"
             android:icon="@drawable/ic_supervisor_account_black_24dp"
-            android:title="Supervisor" />
+            android:title="Notification" />
+
+
         <item
             android:id="@+id/result"
             android:icon="@drawable/ic_result"
             android:title="Result with Grade" />
+
+        <item
+            android:id="@+id/pft"
+            android:icon="@drawable/ic_supervisor_account_black_24dp"
+            android:title="Post From Teacher" />
+
         <item
             android:id="@+id/logout"
             android:icon="@drawable/ic_person_black_24dp"

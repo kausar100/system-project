@@ -13,15 +13,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class StudentHomepage extends AppCompatActivity {
+public class TeacherHomepage extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_student_homepage);
-        this.setTitle("Welcome to Student Homepage");
+        setContentView(R.layout.activity_teacher_homepage);
+        this.setTitle("Welcome to Teacher Homepage");
 
         dl = (DrawerLayout) findViewById(R.id.homepage);
         t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
@@ -31,8 +31,8 @@ public class StudentHomepage extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        final Bundle bundle2 = getIntent().getExtras();
-        final String get_email2 = bundle2.getString("STUDENT_LOGIN");
+        final Bundle bundle = getIntent().getExtras();
+        final String get_email = bundle.getString("TEACHER_LOGIN");
 
         nv =  findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -40,34 +40,29 @@ public class StudentHomepage extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.profile:
-                        //Toast.makeText(StudentHomepage.this, "Profile", Toast.LENGTH_SHORT).show();
-                        Intent it = new Intent(StudentHomepage.this,ProfileStudent.class);
-                        if(bundle2!=null){
-                            if(get_email2!=null){
-                                it.putExtra("STUDENT_PROFILE",get_email2);
+                        //Toast.makeText(TeacherHomepage.this, "Profile", Toast.LENGTH_SHORT).show();
+                        Intent it = new Intent(TeacherHomepage.this,ProfileTeacher.class);
+                        if(bundle!=null){
+                            if(get_email!=null){
+                                it.putExtra("TEACHER_PROFILE",get_email);
                             }
                         }
                         startActivity(it);
                         break;
 
-                    case R.id.notification:
-                        Toast.makeText(StudentHomepage.this,"notification",Toast.LENGTH_SHORT).show();
+                    case R.id.main:
+                        Intent intent = new Intent(TeacherHomepage.this, TeacherMainMenu.class);
+                        startActivity(intent);
                         break;
 
-                    case R.id.message:
-                        Toast.makeText(StudentHomepage.this,"message",Toast.LENGTH_SHORT).show();
+                    case R.id.request:
+                        Toast.makeText(TeacherHomepage.this, "Student Request", Toast.LENGTH_SHORT).show();
                         break;
 
-                    case R.id.pft:
-                        Toast.makeText(StudentHomepage.this,"Post From Teacher",Toast.LENGTH_SHORT).show();
-                        break;
-
-                    case R.id.result:
-                        Toast.makeText(StudentHomepage.this,"result",Toast.LENGTH_SHORT).show();
-                        break;
                     case R.id.logout:
-                        Intent intent = new Intent(StudentHomepage.this,MainActivity.class);
-                        startActivity(intent); break;
+                        Intent intent2 = new Intent(TeacherHomepage.this,MainActivity.class);
+                        startActivity(intent2);
+                        break;
                 }
 
                 dl.closeDrawer(GravityCompat.START);
@@ -93,7 +88,7 @@ public class StudentHomepage extends AppCompatActivity {
         }
         else
         {
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(StudentHomepage.this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TeacherHomepage.this);
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setMessage(R.string.exit);
 

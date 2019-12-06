@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "943918927315",
+    "firebase_url": "https://tutorstudentportalapp-833bd.firebaseio.com",
+    "project_id": "tutorstudentportalapp-833bd",
+    "storage_bucket": "tutorstudentportalapp-833bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:943918927315:android:50f8ea2134dda7b3f2b326",
+        "android_client_info": {
+          "package_name": "com.example.hp.tutorstudentportalapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "943918927315-fsd0m27p1ce1p9h4gojg1qaka4q7lfe1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hp.tutorstudentportalapp",
+            "certificate_hash": "14a87ab0296e937f2078b96709852ccf20e37773"
+          }
+        },
+        {
+          "client_id": "943918927315-t88fhvhfrth48on6r7qq5kcft6iau138.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKsAz_NPyumILNn__TBrHkSxdnvagwW_U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "943918927315-t88fhvhfrth48on6r7qq5kcft6iau138.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

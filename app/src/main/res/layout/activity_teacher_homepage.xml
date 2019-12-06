@@ -8,7 +8,7 @@
     android:layout_height="match_parent"
     android:background="#396964"
     android:gravity="center_vertical"
-    tools:context=".StudentHomepage">
+    tools:context=".TeacherHomepage">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_student">
+        app:menu="@menu/nav_tutor">
 
     </android.support.design.widget.NavigationView>
 

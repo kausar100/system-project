@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#2b597e"
-    android:paddingLeft="10dp"
+    android:background="#396964"
+    android:padding="10dp"
     android:layout_height="match_parent"
     tools:context=".TACFragment">
 
@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:textStyle="bold"
-        android:gravity="center_horizontal"
         android:text="@string/tac"
         android:textSize="23sp" />
 

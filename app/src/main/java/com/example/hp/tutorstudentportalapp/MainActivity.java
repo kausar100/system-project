@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
-    Toolbar toolbar;
+    final String message = "MESSAGE_KEY";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,12 +41,14 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.login:
-                        Intent intent1 = new Intent(MainActivity.this, LoginPage.class);
+                        Intent intent1 = new Intent(MainActivity.this, UserAccount.class);
+                        intent1.putExtra(message,"LOGIN");
                         startActivity(intent1);
                         break;
                     case R.id.registration:
-                        Intent intent = new Intent(MainActivity.this, RegistrationPage.class);
-                        startActivity(intent);
+                        Intent intent2 = new Intent(MainActivity.this, UserAccount.class);
+                        intent2.putExtra(message,"REGISTRATION");
+                        startActivity(intent2);
                         break;
                     case R.id.tac:
                         Fragment fragment = (Fragment)new TACFragment();

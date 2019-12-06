@@ -15,18 +15,11 @@
             android:title="Main Menu" />
 
         <item
-            android:id="@+id/advisor"
-            android:icon="@drawable/ic_supervisor_account_black_24dp"
-            android:title="Advisor" />
-        <item
-            android:id="@+id/supervisor"
-            android:icon="@drawable/ic_supervisor_account_black_24dp"
-            android:title="Supervisor" />
+            android:id="@+id/request"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="Student Request" />
 
-        <item
-            android:id="@+id/result"
-            android:icon="@drawable/ic_result"
-            android:title="Marksheet" />
+
         <item
             android:id="@+id/logout"
             android:icon="@drawable/ic_person_black_24dp"

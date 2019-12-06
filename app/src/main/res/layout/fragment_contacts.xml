@@ -3,12 +3,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#2b597e"
+    android:background="#396964"
     android:padding="5dp"
     android:layout_height="match_parent"
     tools:context=".ContactsFragment">
 
     <TextView
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#396964"
+    android:padding="20dp"
+    tools:context=".LoginForTeacher">
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UserName"
+            android:textSize="20dp"
+            />
+
+        <EditText
+            android:id="@+id/input_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Enter your username here"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:textSize="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password" />
+
+        <EditText
+            android:id="@+id/input_pass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:hint="Enter your password here" />
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/cancel_button_id"
+                android:layout_alignParentLeft="true"
+                android:layout_width="100dp"
+                android:background="@drawable/round_shape_build"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_height="wrap_content"
+                android:text="cancel" />
+
+            <Button
+                android:id="@+id/login_button_id"
+                android:layout_width="100dp"
+                android:background="@drawable/round_shape_build"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="login" />
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/go_register_id"
+            android:layout_marginTop="20dp"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_shape_build"
+            android:text="Don't have an account Register Here" />
+
+    </LinearLayout>
+
+</RelativeLayout>

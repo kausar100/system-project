@@ -9,6 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ProfileTeacher"></activity>
+        <activity android:name=".TeacherHomepage" />
+        <activity android:name=".ProfileStudent" />
+        <activity android:name=".RegistrationForTeacher" />
+        <activity android:name=".RegistrationForStudent" />
+        <activity android:name=".LoginForStudent" />
+        <activity android:name=".LoginForTeacher" />
+        <activity android:name=".UserAccount" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,11 +24,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginPage" />
-        <activity android:name=".RegistrationPage" />
         <activity android:name=".StudentHomepage" />
-        <activity android:name=".TutorHomepage" />
-        <activity android:name=".YearActivity"></activity>
+        <activity android:name=".TeacherMainMenu" />
     </application>
 
 </manifest>
