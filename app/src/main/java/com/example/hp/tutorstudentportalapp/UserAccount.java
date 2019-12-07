@@ -16,6 +16,9 @@ public class UserAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_account);
 
+        getSupportActionBar().setTitle("welcome page");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         Intent intent = getIntent();
         final String message = intent.getStringExtra(message2);
         button = findViewById(R.id.go);

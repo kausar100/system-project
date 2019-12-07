@@ -20,7 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class RegistrationForTeacher extends AppCompatActivity {
-    private Button button1, button2;
+    private Button button1, button2, button;
     private EditText input_username, input_pass, input_con_pass, f_name, l_name, roll;
     private FirebaseAuth mAuth;
     private Spinner Department;
@@ -32,8 +32,12 @@ public class RegistrationForTeacher extends AppCompatActivity {
         setContentView(R.layout.activity_registration_for_teacher);
         this.setTitle("Registration Page for teacher");
 
+        getSupportActionBar().setTitle("welcome page");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mAuth = FirebaseAuth.getInstance();
 
+        button=findViewById(R.id.go_login_id);
         button1 = (Button) findViewById(R.id.cancel_button_id);
         button2 = (Button) findViewById(R.id.register_button_id);
 
@@ -44,6 +48,14 @@ public class RegistrationForTeacher extends AppCompatActivity {
         f_name = (EditText) findViewById(R.id.firstName);
         l_name = (EditText) findViewById(R.id.lastName);
         Department = (Spinner) findViewById(R.id.spin);
+
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),LoginForTeacher.class);
+                startActivity(intent);
+            }
+        });
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override

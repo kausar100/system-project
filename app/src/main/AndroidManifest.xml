@@ -9,14 +9,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ProfileTeacher"></activity>
+        <activity android:name=".FourthYearSecondSemester"></activity>
+        <activity android:name=".ThirdYearSecondSemester" />
+        <activity android:name=".SecondYearSecondSemester" />
+        <activity android:name=".FourthYearFirstSemester" />
+        <activity android:name=".ThirdYearFirstSemester" />
+        <activity android:name=".SecondYearFirstSemester" />
+        <activity android:name=".FirstYearSecondSemester" />
+        <activity android:name=".FirstYearFirstSemester" />
+        <activity android:name=".ResultOfSearch" />
+        <activity android:name=".FindTeacherActivity" />
+        <activity android:name=".ProfileTeacher" />
         <activity android:name=".TeacherHomepage" />
         <activity android:name=".ProfileStudent" />
-        <activity android:name=".RegistrationForTeacher" />
-        <activity android:name=".RegistrationForStudent" />
+        <activity
+            android:name=".RegistrationForTeacher"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".RegistrationForStudent"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".LoginForStudent" />
         <activity android:name=".LoginForTeacher" />
-        <activity android:name=".UserAccount" />
+        <activity
+            android:name=".UserAccount"
+            android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

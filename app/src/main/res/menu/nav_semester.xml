@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/attendence"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="Attendence" />
+
+        <item
+            android:id="@+id/ctm"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="CT Mark" />
+        <item
+            android:id="@+id/post"
+            android:icon="@drawable/ic_notifications_black_24dp"
+            android:title="Post To Student" />
+        <item
+            android:id="@+id/fileshare"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="File Sharing" />
+
+        <item
+            android:id="@+id/result"
+            android:icon="@drawable/ic_info_black_24dp"
+            android:title="Result with Grade" />
+
+    </group>
+</menu>

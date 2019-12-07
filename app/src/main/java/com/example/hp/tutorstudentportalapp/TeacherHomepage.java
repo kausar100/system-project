@@ -55,6 +55,11 @@ public class TeacherHomepage extends AppCompatActivity {
                         startActivity(intent);
                         break;
 
+                    case R.id.message:
+                        Toast.makeText(TeacherHomepage.this,"message",Toast.LENGTH_SHORT).show();
+                        break;
+
+
                     case R.id.request:
                         Toast.makeText(TeacherHomepage.this, "Student Request", Toast.LENGTH_SHORT).show();
                         break;

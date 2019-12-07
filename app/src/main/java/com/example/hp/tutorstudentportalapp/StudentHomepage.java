@@ -62,6 +62,12 @@ public class StudentHomepage extends AppCompatActivity {
                         Toast.makeText(StudentHomepage.this,"Post From Teacher",Toast.LENGTH_SHORT).show();
                         break;
 
+                    case R.id.findteacher:
+                       // Toast.makeText(StudentHomepage.this,"Find Teacher",Toast.LENGTH_SHORT).show();
+                        Intent it2 = new Intent(getApplicationContext(),FindTeacherActivity.class);
+                        startActivity(it2);
+                        break;
+
                     case R.id.result:
                         Toast.makeText(StudentHomepage.this,"result",Toast.LENGTH_SHORT).show();
                         break;

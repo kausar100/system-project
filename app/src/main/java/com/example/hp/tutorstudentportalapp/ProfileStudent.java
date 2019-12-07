@@ -22,6 +22,8 @@ public class ProfileStudent extends AppCompatActivity {
         setContentView(R.layout.activity_profile_student);
         this.setTitle("profile Page student");
 
+
+
         UserName = (TextView) findViewById(R.id.username);
         Email = (TextView) findViewById(R.id.email);
         Dept = (TextView) findViewById(R.id.department);

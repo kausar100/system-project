@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/design_default_color_primary"
+    android:orientation="vertical"
+    tools:context=".FindTeacherActivity">
+
+    <TextView
+        style="@style/TextAppearance.AppCompat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Search for teacher"
+        android:textAllCaps="true"
+        android:textSize="30dp"
+        android:textStyle="bold"/>
+
+
+    <RadioGroup
+        android:id="@+id/radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="30dp"
+        android:paddingLeft="40dp">
+
+        <RadioButton
+            android:id="@+id/sbname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="search by name"
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/sbemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="search by email"
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/sbdepartment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="search by department"
+            android:textAllCaps="true"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+    </RadioGroup>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp">
+
+        <EditText
+            android:id="@+id/searchID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Search Here..." />
+
+        <Button
+            android:id="@+id/search_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/searchID"
+            android:text="search" />
+
+    </RelativeLayout>
+
+</LinearLayout>

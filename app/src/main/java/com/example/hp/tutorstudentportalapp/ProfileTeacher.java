@@ -22,6 +22,7 @@ public class ProfileTeacher extends AppCompatActivity {
         setContentView(R.layout.activity_profile_teacher);
         this.setTitle("profile Page teacher");
 
+
         UserName = (TextView) findViewById(R.id.username);
         Email = (TextView) findViewById(R.id.email);
         Dept = (TextView) findViewById(R.id.department);
