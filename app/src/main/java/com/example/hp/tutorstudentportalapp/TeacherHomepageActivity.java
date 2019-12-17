@@ -13,7 +13,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class TeacherHomepage extends AppCompatActivity {
+import com.google.firebase.auth.FirebaseAuth;
+
+public class TeacherHomepageActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
@@ -30,42 +32,45 @@ public class TeacherHomepage extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-
-        final Bundle bundle = getIntent().getExtras();
-        final String get_email = bundle.getString("TEACHER_LOGIN");
-
         nv =  findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.profile:
-                        //Toast.makeText(TeacherHomepage.this, "Profile", Toast.LENGTH_SHORT).show();
-                        Intent it = new Intent(TeacherHomepage.this,ProfileTeacher.class);
-                        if(bundle!=null){
-                            if(get_email!=null){
-                                it.putExtra("TEACHER_PROFILE",get_email);
-                            }
-                        }
+                        Intent it = new Intent(TeacherHomepageActivity.this, ProfileTeacherActivity.class);
                         startActivity(it);
                         break;
 
-                    case R.id.main:
-                        Intent intent = new Intent(TeacherHomepage.this, TeacherMainMenu.class);
-                        startActivity(intent);
+
+                    case R.id.ctm:
+                      Toast.makeText(TeacherHomepageActivity.this, "ct mark", Toast.LENGTH_SHORT).show();
                         break;
 
-                    case R.id.message:
-                        Toast.makeText(TeacherHomepage.this,"message",Toast.LENGTH_SHORT).show();
+                    case R.id.attendence:
+                        Toast.makeText(TeacherHomepageActivity.this, "attendence", Toast.LENGTH_SHORT).show();
                         break;
 
+                    case R.id.result:
+                        Toast.makeText(TeacherHomepageActivity.this, "request", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.post:
+                        Toast.makeText(TeacherHomepageActivity.this, "post to student", Toast.LENGTH_SHORT).show();
+                        break;
+
+                    case R.id.fileshare:
+                        Toast.makeText(TeacherHomepageActivity.this, "fileshare", Toast.LENGTH_SHORT).show();
+                        break;
 
                     case R.id.request:
-                        Toast.makeText(TeacherHomepage.this, "Student Request", Toast.LENGTH_SHORT).show();
+                        Intent intent1 = new Intent(TeacherHomepageActivity.this,StudentRequestActivity.class);
+                        startActivity(intent1);
                         break;
 
                     case R.id.logout:
-                        Intent intent2 = new Intent(TeacherHomepage.this,MainActivity.class);
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent2 = new Intent(TeacherHomepageActivity.this,MainActivity.class);
                         startActivity(intent2);
                         break;
                 }
@@ -93,7 +98,7 @@ public class TeacherHomepage extends AppCompatActivity {
         }
         else
         {
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TeacherHomepage.this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TeacherHomepageActivity.this);
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setMessage(R.string.exit);
 

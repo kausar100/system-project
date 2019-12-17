@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "943918927315",
-    "firebase_url": "https://tutorstudentportalapp-833bd.firebaseio.com",
-    "project_id": "tutorstudentportalapp-833bd",
-    "storage_bucket": "tutorstudentportalapp-833bd.appspot.com"
+    "project_number": "810952890755",
+    "firebase_url": "https://tutorstudentportalapp-cfb37.firebaseio.com",
+    "project_id": "tutorstudentportalapp-cfb37",
+    "storage_bucket": "tutorstudentportalapp-cfb37.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:943918927315:android:50f8ea2134dda7b3f2b326",
+        "mobilesdk_app_id": "1:810952890755:android:24337c3285610a89f37eb6",
         "android_client_info": {
           "package_name": "com.example.hp.tutorstudentportalapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "943918927315-fsd0m27p1ce1p9h4gojg1qaka4q7lfe1.apps.googleusercontent.com",
+          "client_id": "810952890755-74s8dg32mpd35vq9rsfrg1v1jadfdmog.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.hp.tutorstudentportalapp",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "943918927315-t88fhvhfrth48on6r7qq5kcft6iau138.apps.googleusercontent.com",
+          "client_id": "810952890755-hf4ibfjib8c2qh51i2pgh8d0stsp0k6b.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBKsAz_NPyumILNn__TBrHkSxdnvagwW_U"
+          "current_key": "AIzaSyD74BC4Pr5ZdLCAr3TyYxMDfrtFNuXMsBA"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "943918927315-t88fhvhfrth48on6r7qq5kcft6iau138.apps.googleusercontent.com",
+              "client_id": "810952890755-hf4ibfjib8c2qh51i2pgh8d0stsp0k6b.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

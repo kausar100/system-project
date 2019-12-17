@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.hp.tutorstudentportalapp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,29 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FourthYearSecondSemester"></activity>
-        <activity android:name=".ThirdYearSecondSemester" />
-        <activity android:name=".SecondYearSecondSemester" />
-        <activity android:name=".FourthYearFirstSemester" />
-        <activity android:name=".ThirdYearFirstSemester" />
-        <activity android:name=".SecondYearFirstSemester" />
-        <activity android:name=".FirstYearSecondSemester" />
-        <activity android:name=".FirstYearFirstSemester" />
-        <activity android:name=".ResultOfSearch" />
+        <activity android:name=".StudentRequestActivity"></activity>
         <activity android:name=".FindTeacherActivity" />
-        <activity android:name=".ProfileTeacher" />
-        <activity android:name=".TeacherHomepage" />
-        <activity android:name=".ProfileStudent" />
+        <activity android:name=".ProfileTeacherActivity" />
+        <activity android:name=".TeacherHomepageActivity" />
+        <activity android:name=".ProfileStudentActivity" />
         <activity
-            android:name=".RegistrationForTeacher"
+            android:name=".RegistrationForTeacherActivity"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".RegistrationForStudent"
+            android:name=".RegistrationForStudentActivity"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".LoginForStudent" />
-        <activity android:name=".LoginForTeacher" />
+        <activity android:name=".LoginForStudentActivity" />
+        <activity android:name=".LoginForTeacherActivity" />
         <activity
-            android:name=".UserAccount"
+            android:name=".UserAccountActivity"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -40,8 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StudentHomepage" />
-        <activity android:name=".TeacherMainMenu" />
+        <activity android:name=".StudentHomepageActivity" />
     </application>
 
 </manifest>

@@ -8,10 +8,6 @@
             android:icon="@drawable/ic_profile_circle_black_24dp"
             android:title="Profile" />
 
-        <item
-            android:id="@+id/message"
-            android:icon="@drawable/ic_supervisor_account_black_24dp"
-            android:title="Message" />
 
         <item
             android:id="@+id/notification"

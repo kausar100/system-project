@@ -9,7 +9,7 @@
     android:background="#396964"
     android:padding="20dp"
     android:layout_height="match_parent"
-    tools:context=".UserAccount">
+    tools:context=".UserAccountActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"

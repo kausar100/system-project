@@ -19,7 +19,7 @@ import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class RegistrationForTeacher extends AppCompatActivity {
+public class RegistrationForTeacherActivity extends AppCompatActivity {
     private Button button1, button2, button;
     private EditText input_username, input_pass, input_con_pass, f_name, l_name, roll;
     private FirebaseAuth mAuth;
@@ -52,7 +52,7 @@ public class RegistrationForTeacher extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(),LoginForTeacher.class);
+                Intent intent = new Intent(getApplicationContext(), LoginForTeacherActivity.class);
                 startActivity(intent);
             }
         });
@@ -60,7 +60,7 @@ public class RegistrationForTeacher extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RegistrationForTeacher.this, MainActivity.class);
+                Intent intent = new Intent(RegistrationForTeacherActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -142,13 +142,11 @@ public class RegistrationForTeacher extends AppCompatActivity {
                         if (task.isSuccessful()) {
 
                             parent = FirebaseDatabase.getInstance().getReference("TEACHER");
-                            String temp = email.replace(".", ",");
-                            parent.child(temp).child("Name").setValue(username);
-                            parent.child(temp).child("Department").setValue(dept);
-                            parent.child(temp).child("Password").setValue(pass);
-
+                            String uid = mAuth.getCurrentUser().getUid();
+                            Teacher teacher = new Teacher(username,dept,pass,email,uid);
+                            parent.child(uid).setValue(teacher);
                             Toast.makeText(getApplicationContext(), "Successfully Registered as a Teacher !!!", Toast.LENGTH_SHORT).show();
-                            Intent intent = new Intent(RegistrationForTeacher.this,LoginForTeacher.class);
+                            Intent intent = new Intent(RegistrationForTeacherActivity.this, LoginForTeacherActivity.class);
                             startActivity(intent);
                         }
                         else {

@@ -6,18 +6,8 @@
     android:layout_height="fill_parent"
     android:background="@color/design_default_color_primary"
     android:orientation="vertical"
-    tools:context=".FindTeacherActivity">
+    tools:context=".StudentRequestActivity">
 
-
-    <TextView
-        style="@style/TextAppearance.AppCompat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="Search for teacher"
-        android:textAllCaps="true"
-        android:textSize="30dp"
-        android:textStyle="bold"/>
 
     <RelativeLayout
         android:layout_width="wrap_content"
@@ -29,7 +19,7 @@
             android:id="@+id/searchID"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Your Teacher name here..." />
+            android:hint="Enter Your Student name here..." />
 
         <Button
             android:id="@+id/search_button"

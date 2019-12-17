@@ -13,7 +13,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
@@ -41,12 +40,12 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.login:
-                        Intent intent1 = new Intent(MainActivity.this, UserAccount.class);
+                        Intent intent1 = new Intent(MainActivity.this, UserAccountActivity.class);
                         intent1.putExtra(message,"LOGIN");
                         startActivity(intent1);
                         break;
                     case R.id.registration:
-                        Intent intent2 = new Intent(MainActivity.this, UserAccount.class);
+                        Intent intent2 = new Intent(MainActivity.this, UserAccountActivity.class);
                         intent2.putExtra(message,"REGISTRATION");
                         startActivity(intent2);
                         break;

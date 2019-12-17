@@ -4,9 +4,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.view.GravityCompat;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AlertDialog;
@@ -15,66 +13,64 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
-public class TutorHomepage extends AppCompatActivity {
-    TabLayout tabLayout;
-    ViewPager viewPager;
-    ViewPagerAdapter viewPagerAdapter;
+import com.google.firebase.auth.FirebaseAuth;
+
+public class StudentHomepageActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tutor_homepage);
-        this.setTitle("Welcome to Teacher Homepage");
+        setContentView(R.layout.activity_student_homepage);
+        this.setTitle("Welcome to Student Homepage");
 
-        dl = findViewById(R.id.drawer_layout);
-        nv = findViewById(R.id.nav_view);
-        tabLayout = findViewById(R.id.tabLayout);
-        viewPager = findViewById(R.id.viewPager);
+        dl = (DrawerLayout) findViewById(R.id.homepage);
+        t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
+        dl.addDrawerListener(t);
+        t.syncState();
 
-        viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager());
-        viewPagerAdapter.addFragments(new Routine_Fragment(), "Class Routine");
-        viewPagerAdapter.addFragments(new Notification_Fragment(), "Notification");
-        viewPager.setAdapter(viewPagerAdapter);
-        tabLayout.setupWithViewPager(viewPager);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+
+        nv =  findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.profile:
-                        Toast.makeText(TutorHomepage.this, "Profile", Toast.LENGTH_SHORT).show();
+                        Intent it = new Intent(StudentHomepageActivity.this, ProfileStudentActivity.class);
+                        startActivity(it);
                         break;
-                    case R.id.main:
-                        //Toast.makeText(TutorHomepage.this, "main", Toast.LENGTH_SHORT).show();
-                        Intent intent1 = new Intent(TutorHomepage.this,YearActivity.class);
-                        startActivity(intent1 );
+
+                    case R.id.notification:
+                        Toast.makeText(StudentHomepageActivity.this,"notification",Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.advisor:
-                        Toast.makeText(TutorHomepage.this,"Advisor",Toast.LENGTH_SHORT).show();
+
+                    case R.id.pft:
+                        Toast.makeText(StudentHomepageActivity.this,"Post From Teacher",Toast.LENGTH_SHORT).show();
                         break;
-                    case R.id.supervisor:
-                        Toast.makeText(TutorHomepage.this,"supervisor",Toast.LENGTH_SHORT).show();
+
+                    case R.id.findteacher:
+                        // Toast.makeText(StudentHomepageActivity.this,"Find Teacher",Toast.LENGTH_SHORT).show();
+                        Intent it2 = new Intent(getApplicationContext(),FindTeacherActivity.class);
+                        startActivity(it2);
                         break;
+
                     case R.id.result:
-                        Toast.makeText(TutorHomepage.this,"result",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentHomepageActivity.this,"result",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.logout:
-                        Intent intent2 = new Intent(TutorHomepage.this,MainActivity.class);
-                        startActivity(intent2); break;
+                        FirebaseAuth.getInstance().signOut();
+                        Intent intent = new Intent(StudentHomepageActivity.this,MainActivity.class);
+                        startActivity(intent);
+                        break;
                 }
 
                 dl.closeDrawer(GravityCompat.START);
                 return true;
             }
         });
-
-        t = new ActionBarDrawerToggle(this, dl, R.string.Open, R.string.Close);
-        dl.addDrawerListener(t);
-        t.syncState();
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
 
     }
     @Override
@@ -94,7 +90,7 @@ public class TutorHomepage extends AppCompatActivity {
         }
         else
         {
-            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TutorHomepage.this);
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(StudentHomepageActivity.this);
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setMessage(R.string.exit);
 

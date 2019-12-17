@@ -15,7 +15,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginForTeacher extends AppCompatActivity {
+
+public class LoginForStudentActivity extends AppCompatActivity {
     private Button button1, button2, button3;
     private EditText input_username, input_pass;
     private FirebaseAuth mAuth;
@@ -23,10 +24,8 @@ public class LoginForTeacher extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login_for_teacher);
-        this.setTitle("Login Page teacher");
-
-        mAuth = FirebaseAuth.getInstance();
+        setContentView(R.layout.activity_login_for_student);
+        this.setTitle("Login Page student");
 
         button1 = (Button) findViewById(R.id.login_button_id);
         button2 = (Button) findViewById(R.id.cancel_button_id);
@@ -34,11 +33,21 @@ public class LoginForTeacher extends AppCompatActivity {
 
         input_username = (EditText) findViewById(R.id.input_username);
         input_pass = (EditText) findViewById(R.id.input_pass);
+
+
+        mAuth = FirebaseAuth.getInstance();
+        if(mAuth.getCurrentUser()!=null){
+            Toast.makeText(LoginForStudentActivity.this, "Successfully Login AS A STUDENT!!!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(LoginForStudentActivity.this, StudentHomepageActivity.class);
+            startActivity(intent);
+        }
+
+
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(LoginForTeacher.this, MainActivity.class);
+                Intent intent = new Intent(LoginForStudentActivity.this, MainActivity.class);
                 startActivity(intent);
 
             }
@@ -47,7 +56,7 @@ public class LoginForTeacher extends AppCompatActivity {
         button3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginForTeacher.this, RegistrationForTeacher.class);
+                Intent intent = new Intent(LoginForStudentActivity.this, RegistrationForStudentActivity.class);
                 startActivity(intent);
             }
         });
@@ -87,20 +96,21 @@ public class LoginForTeacher extends AppCompatActivity {
         }
 
 
+
+
+
         mAuth.signInWithEmailAndPassword(username, pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
 
-                    Toast.makeText(LoginForTeacher.this, "Successfully Login AS A TEACHER!!!", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(LoginForTeacher.this, TeacherHomepage.class);
-                    intent.putExtra("TEACHER_LOGIN",username);
+                    Toast.makeText(LoginForStudentActivity.this, "Successfully Login AS A STUDENT!!!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginForStudentActivity.this, StudentHomepageActivity.class);
                     startActivity(intent);
-
 
                 } else {
 
-                    Toast.makeText(LoginForTeacher.this, "Error : " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginForStudentActivity.this, "Error : " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
 
                 }
 

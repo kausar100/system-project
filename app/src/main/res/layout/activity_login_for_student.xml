@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#396964"
     android:padding="20dp"
-    tools:context=".LoginForStudent">
+    tools:context=".LoginForStudentActivity">
 
     <LinearLayout
 

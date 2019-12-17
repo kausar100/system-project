@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
 
-public class UserAccount extends AppCompatActivity {
+public class UserAccountActivity extends AppCompatActivity {
     private RadioGroup radioGroup;
     Button button;
     final String message2 = "MESSAGE_KEY";
@@ -16,7 +16,7 @@ public class UserAccount extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_account);
 
-        getSupportActionBar().setTitle("welcome page");
+        getSupportActionBar().setTitle("user account choose page");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         Intent intent = getIntent();
@@ -29,22 +29,22 @@ public class UserAccount extends AppCompatActivity {
                 radioGroup =  findViewById(R.id.radio);
                 int selectedId = radioGroup.getCheckedRadioButtonId();
                 if((message.equals("LOGIN")) && (selectedId==R.id.teacher)){
-                    Intent it = new Intent(UserAccount.this,LoginForTeacher.class);
+                    Intent it = new Intent(UserAccountActivity.this, LoginForTeacherActivity.class);
                     startActivity(it);
 
                 }
                 else if((message.equals("LOGIN")) && (selectedId == R.id.student)){
-                    Intent it2 = new Intent(UserAccount.this,LoginForStudent.class);
+                    Intent it2 = new Intent(UserAccountActivity.this, LoginForStudentActivity.class);
                     startActivity(it2);
 
                 }
                 else if((message.equals("REGISTRATION")) && (selectedId==R.id.teacher)){
-                    Intent it3 = new Intent(UserAccount.this,RegistrationForTeacher.class);
+                    Intent it3 = new Intent(UserAccountActivity.this, RegistrationForTeacherActivity.class);
                     startActivity(it3);
 
                 }
                 else if((message.equals("REGISTRATION")) && (selectedId == R.id.student)){
-                    Intent it4 = new Intent(UserAccount.this,RegistrationForStudent.class);
+                    Intent it4 = new Intent(UserAccountActivity.this, RegistrationForStudentActivity.class);
                     startActivity(it4);
 
                 }
