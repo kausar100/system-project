@@ -36,7 +36,7 @@ public class LoginForTeacherActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         if(mAuth.getCurrentUser()!=null){
-            Toast.makeText(LoginForTeacherActivity.this, "Successfully Login AS A STUDENT!!!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginForTeacherActivity.this, "Successfully Login AS A TEACHER!!!", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(LoginForTeacherActivity.this, TeacherHomepageActivity.class);
             startActivity(intent);
         }

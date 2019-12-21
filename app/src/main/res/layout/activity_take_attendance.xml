@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".TakeAttendanceActivity">
+
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Spinner
+            android:id="@+id/departmentID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/dept_choose" />
+        <Spinner
+            android:id="@+id/sectionID"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/section_choose" />
+    </LinearLayout>
+
+
+    <EditText
+        android:id="@+id/totalstudent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Total Number of Student"
+        android:inputType="number" />
+
+
+    <EditText
+        android:id="@+id/initialroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Give First Student Roll Number"
+        android:inputType="number" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/ok"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Student list" />
+        <Button
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/showattID"
+            android:text="click for view Attendance"/>
+    </RelativeLayout>
+
+
+    <ListView
+        android:background="#6D95BD"
+        android:padding="10dp"
+        android:id="@+id/listSchool"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:divider="@color/material_blue_grey_800"
+        android:dividerHeight="1dp"/>
+</LinearLayout>

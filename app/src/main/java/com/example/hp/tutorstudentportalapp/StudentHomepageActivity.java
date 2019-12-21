@@ -11,6 +11,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,6 +21,7 @@ public class StudentHomepageActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +36,7 @@ public class StudentHomepageActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
-        nv =  findViewById(R.id.nv);
+        nv = findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -44,25 +47,27 @@ public class StudentHomepageActivity extends AppCompatActivity {
                         break;
 
                     case R.id.notification:
-                        Toast.makeText(StudentHomepageActivity.this,"notification",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentHomepageActivity.this, "notification", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.pft:
-                        Toast.makeText(StudentHomepageActivity.this,"Post From Teacher",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(StudentHomepageActivity.this, "Post From Teacher", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.findteacher:
                         // Toast.makeText(StudentHomepageActivity.this,"Find Teacher",Toast.LENGTH_SHORT).show();
-                        Intent it2 = new Intent(getApplicationContext(),FindTeacherActivity.class);
+                        Intent it2 = new Intent(getApplicationContext(), FindTeacherActivity.class);
                         startActivity(it2);
                         break;
 
                     case R.id.result:
-                        Toast.makeText(StudentHomepageActivity.this,"result",Toast.LENGTH_SHORT).show();
+                        Intent it3 = new Intent(getApplicationContext(), FindResultActivity.class);
+                        startActivity(it3);
+                        //Toast.makeText(StudentHomepageActivity.this,"result",Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.logout:
                         FirebaseAuth.getInstance().signOut();
-                        Intent intent = new Intent(StudentHomepageActivity.this,MainActivity.class);
+                        Intent intent = new Intent(StudentHomepageActivity.this, MainActivity.class);
                         startActivity(intent);
                         break;
                 }
@@ -73,6 +78,7 @@ public class StudentHomepageActivity extends AppCompatActivity {
         });
 
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -87,9 +93,7 @@ public class StudentHomepageActivity extends AppCompatActivity {
         if (dl.isDrawerOpen(GravityCompat.START)) {
             dl.closeDrawer(GravityCompat.START);
 
-        }
-        else
-        {
+        } else {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(StudentHomepageActivity.this);
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setMessage(R.string.exit);

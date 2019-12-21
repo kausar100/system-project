@@ -19,6 +19,7 @@ public class TeacherHomepageActivity extends AppCompatActivity {
     private DrawerLayout dl;
     private ActionBarDrawerToggle t;
     private NavigationView nv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,7 +33,7 @@ public class TeacherHomepageActivity extends AppCompatActivity {
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        nv =  findViewById(R.id.nv);
+        nv = findViewById(R.id.nv);
         nv.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -44,15 +45,21 @@ public class TeacherHomepageActivity extends AppCompatActivity {
 
 
                     case R.id.ctm:
-                      Toast.makeText(TeacherHomepageActivity.this, "ct mark", Toast.LENGTH_SHORT).show();
+                        Intent it2 = new Intent(getApplicationContext(), TakeCtMarkActivity.class);
+                        startActivity(it2);
+                        //Toast.makeText(TeacherHomepageActivity.this, "ct mark", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.attendence:
-                        Toast.makeText(TeacherHomepageActivity.this, "attendence", Toast.LENGTH_SHORT).show();
+                        Intent it3 = new Intent(getApplicationContext(), TakeAttendanceActivity.class);
+                        startActivity(it3);
+                        //Toast.makeText(TeacherHomepageActivity.this, "attendence", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.result:
-                        Toast.makeText(TeacherHomepageActivity.this, "request", Toast.LENGTH_SHORT).show();
+                        Intent it4 = new Intent(getApplicationContext(), FindResultActivity.class);
+                        startActivity(it4);
+                        //Toast.makeText(TeacherHomepageActivity.this, "request", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.post:
@@ -64,13 +71,13 @@ public class TeacherHomepageActivity extends AppCompatActivity {
                         break;
 
                     case R.id.request:
-                        Intent intent1 = new Intent(TeacherHomepageActivity.this,StudentRequestActivity.class);
+                        Intent intent1 = new Intent(TeacherHomepageActivity.this, StudentRequestActivity.class);
                         startActivity(intent1);
                         break;
 
                     case R.id.logout:
                         FirebaseAuth.getInstance().signOut();
-                        Intent intent2 = new Intent(TeacherHomepageActivity.this,MainActivity.class);
+                        Intent intent2 = new Intent(TeacherHomepageActivity.this, MainActivity.class);
                         startActivity(intent2);
                         break;
                 }
@@ -81,6 +88,7 @@ public class TeacherHomepageActivity extends AppCompatActivity {
         });
 
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
@@ -95,9 +103,7 @@ public class TeacherHomepageActivity extends AppCompatActivity {
         if (dl.isDrawerOpen(GravityCompat.START)) {
             dl.closeDrawer(GravityCompat.START);
 
-        }
-        else
-        {
+        } else {
             AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(TeacherHomepageActivity.this);
             alertDialogBuilder.setCancelable(false);
             alertDialogBuilder.setMessage(R.string.exit);

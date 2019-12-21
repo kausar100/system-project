@@ -21,4 +21,34 @@
         <item>ECE</item>
         <item>MSE</item>
     </string-array>
+
+    <string-array name="section_choose">
+        <item>Choose a Section</item>
+        <item>A</item>
+        <item>B</item>
+    </string-array>
+
+    <string-array name="dept_choose">
+        <item>Choose a Department</item>
+        <item>CSE</item>
+        <item>EEE</item>
+        <item>ME</item>
+        <item>CIVIL</item>
+    </string-array>
+    <string-array name="ct_mark">
+        <item>Choose a Mark</item>
+        <item>10</item>
+        <item>12</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>20</item>
+    </string-array>
+
+    <string-array name="ct_no">
+        <item>Choose CT</item>
+        <item>CT-1</item>
+        <item>CT-2</item>
+    </string-array>
 </resources>
