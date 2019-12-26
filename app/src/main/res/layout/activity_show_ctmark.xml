@@ -5,8 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#396964"
     tools:context=".ShowCTMarkActivity">
     <RelativeLayout
+        android:background="#396964"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,21 +24,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:entries="@array/ct_no" />
-
     </RelativeLayout>
+    <EditText
+        android:id="@+id/bnID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Batch Number of Students"
+        android:inputType="number" />
     <LinearLayout
+        android:background="#396964"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
+            android:background="@drawable/round_shape_build"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fetchctmark"
             android:text="Show CT mark"/>
     </LinearLayout>
     <ListView
-        android:background="#6D95BD"
+        android:background="#396964"
         android:padding="10dp"
         android:id="@+id/showctresult"
         android:layout_width="fill_parent"

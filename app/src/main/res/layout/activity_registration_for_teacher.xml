@@ -10,10 +10,9 @@
     tools:context=".RegistrationForTeacherActivity">
 
     <RelativeLayout
+        android:background="#396964"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        >
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:orientation="vertical"

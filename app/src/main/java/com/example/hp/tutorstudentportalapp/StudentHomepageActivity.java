@@ -47,7 +47,9 @@ public class StudentHomepageActivity extends AppCompatActivity {
                         break;
 
                     case R.id.notification:
-                        Toast.makeText(StudentHomepageActivity.this, "notification", Toast.LENGTH_SHORT).show();
+                        Intent it4 = new Intent(StudentHomepageActivity.this, FileReceiveActivity.class);
+                        startActivity(it4);
+                        //Toast.makeText(StudentHomepageActivity.this, "notification", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.pft:

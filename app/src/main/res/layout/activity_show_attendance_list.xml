@@ -4,10 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#396964"
     android:orientation="vertical"
     tools:context=".ShowAttendanceListActivity">
 
     <LinearLayout
+        android:background="#396964"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:orientation="horizontal"
@@ -23,26 +25,36 @@
             android:layout_height="wrap_content"
             android:entries="@array/section_choose" />
     </LinearLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/batchID"
+        android:hint="Enter Batch Number of Students"/>
 
     <LinearLayout
+        android:background="#396964"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
+            android:background="@drawable/round_shape_build"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/datepickID"
             android:text="Select a Date"/>
 
         <Button
+            android:background="@drawable/round_shape_build"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/fetchdata"
             android:text="Show Attendance"/>
     </LinearLayout>
     <ListView
-        android:background="#6D95BD"
+        android:background="#396964"
         android:padding="10dp"
         android:id="@+id/showattendanceID"
         android:layout_width="fill_parent"

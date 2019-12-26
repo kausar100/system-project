@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -22,10 +23,11 @@ public class ShowCTMarkActivity extends AppCompatActivity {
     ListView listView;
     Spinner dept, ct_no;
     Button fetch;
+    EditText editText;
     DatabaseReference databaseReference;
     private List<FetchCtMark> list;
     private StdCustomAdapter customAdapter;
-    private String selectDept, selectCtNum;
+    private String selectDept, selectCtNum, enterBatch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +38,7 @@ public class ShowCTMarkActivity extends AppCompatActivity {
         dept = findViewById(R.id.showctdepartmentID);
         ct_no = findViewById(R.id.ctnoID);
         fetch = findViewById(R.id.fetchctmark);
+        editText = findViewById(R.id.bnID);
     }
 
     @Override
@@ -47,7 +50,7 @@ public class ShowCTMarkActivity extends AppCompatActivity {
             public void onClick(View view) {
                 selectDept = dept.getSelectedItem().toString();
                 selectCtNum = ct_no.getSelectedItem().toString();
-
+                enterBatch = editText.getText().toString();
 
                 if (selectDept.equals("Choose a Department")) {
                     Toast.makeText(getApplicationContext(), "Please Choose a Department", Toast.LENGTH_SHORT).show();
@@ -57,10 +60,14 @@ public class ShowCTMarkActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please Choose CT Number", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if (enterBatch.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Batch Number of Students", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 listView = findViewById(R.id.showctresult);
                 list = new ArrayList<>();
-                databaseReference = FirebaseDatabase.getInstance().getReference("CTMARK").child(selectDept).child(selectCtNum);
+                databaseReference = FirebaseDatabase.getInstance().getReference("CTMARK").child(selectDept).child(enterBatch).child(selectCtNum);
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

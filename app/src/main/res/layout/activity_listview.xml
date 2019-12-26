@@ -1,7 +1,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:padding="5dp"
-    android:background="#9176D1"
+    android:background="#396964"
     android:layout_height="wrap_content">
 
     <TextView
@@ -14,6 +14,8 @@
 
 
     <Button
+        android:background="@drawable/round_shape_build"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:id="@+id/ps"
         android:layout_toLeftOf="@+id/ab"
         android:layout_width="wrap_content"
@@ -22,6 +24,8 @@
 
     <Button
         android:id="@+id/ab"
+        android:background="@drawable/round_shape_build"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,22 +1,16 @@
 package com.example.hp.tutorstudentportalapp;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
+import android.widget.TextView;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 public class SchoolAdapter extends BaseAdapter {
@@ -34,10 +28,6 @@ public class SchoolAdapter extends BaseAdapter {
     }
 
     public int getCount() {
-        // return the number of records
-//        if(mArrSchoolData.size()==0){
-//            Toast.makeText(mContext,"Cann't Find Related Data in Database.",Toast.LENGTH_SHORT).show();
-//        }
         return mArrSchoolData.size();
     }
 
@@ -62,7 +52,7 @@ public class SchoolAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 FetchItem fetchItem = new FetchItem(mArrSchoolData.get(position),true);
-                databaseReference = FirebaseDatabase.getInstance().getReference("ATTENDANCE").child(listViewItem.getDepartment()).child(listViewItem.getSection());
+                databaseReference = FirebaseDatabase.getInstance().getReference("ATTENDANCE").child(listViewItem.getDepartment()).child(listViewItem.getBatch()).child(listViewItem.getSection());
                 databaseReference.child(listViewItem.getDate()).child(mArrSchoolData.get(position)).setValue(fetchItem);
                 present.setText("DONE");
             }
@@ -72,7 +62,7 @@ public class SchoolAdapter extends BaseAdapter {
             @Override
             public void onClick(View view) {
                 FetchItem fetchItem2 = new FetchItem(mArrSchoolData.get(position),false);
-                databaseReference = FirebaseDatabase.getInstance().getReference("ATTENDANCE").child(listViewItem.getDepartment()).child(listViewItem.getSection());
+                databaseReference = FirebaseDatabase.getInstance().getReference("ATTENDANCE").child(listViewItem.getDepartment()).child(listViewItem.getBatch()).child(listViewItem.getSection());
                 databaseReference.child(listViewItem.getDate()).child(mArrSchoolData.get(position)).setValue(fetchItem2);
                 absent.setText("DONE");
 

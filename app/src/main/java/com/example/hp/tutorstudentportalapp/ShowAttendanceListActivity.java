@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -29,7 +30,8 @@ public class ShowAttendanceListActivity extends AppCompatActivity {
     private List<FetchItem> list;
     private CustomAdapter customAdapter;
     private DatePickerDialog datePickerDialog;
-    private String selectDept, selectSec, date;
+    private String selectDept, selectSec, date, batch;
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class ShowAttendanceListActivity extends AppCompatActivity {
         sec = findViewById(R.id.showsectionID);
         datechoose = findViewById(R.id.datepickID);
         fetch = findViewById(R.id.fetchdata);
+        editText = findViewById(R.id.batchID);
 
 
     }
@@ -54,12 +57,18 @@ public class ShowAttendanceListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 selectDept = dept.getSelectedItem().toString();
                 selectSec = sec.getSelectedItem().toString();
+                batch = editText.getText().toString();
+
                 if (selectDept.equals("Choose a Department")) {
                     Toast.makeText(getApplicationContext(), "Please Choose a Department", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if (selectSec.equals("Choose a Section")) {
                     Toast.makeText(getApplicationContext(), "Please Choose a Section", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (batch.length()==0) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Batch number of Students", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 DatePicker datePicker = new DatePicker(ShowAttendanceListActivity.this);
@@ -85,7 +94,7 @@ public class ShowAttendanceListActivity extends AppCompatActivity {
             public void onClick(View view) {
                 listView = findViewById(R.id.showattendanceID);
                 list = new ArrayList<>();
-                databaseReference = FirebaseDatabase.getInstance().getReference("ATTENDANCE").child(selectDept).child(selectSec).child(date);
+                databaseReference = FirebaseDatabase.getInstance().getReference("ATTENDANCE").child(selectDept).child(batch).child(selectSec).child(date);
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

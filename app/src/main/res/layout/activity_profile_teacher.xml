@@ -5,9 +5,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#396964"
     tools:context=".ProfileTeacherActivity">
 
     <RelativeLayout
+        android:background="#396964"
         android:id="@+id/layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -45,7 +47,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/header_cover_image"
-            android:background="#ebca0707"
+            android:background="#396964"
             android:elevation="4dp"
             android:paddingBottom="24dp">
 
@@ -84,7 +86,7 @@
             android:layout_below="@+id/profile_layout"
             android:layout_margin="5dp"
             android:layout_marginTop="5dp"
-            android:background="#fff"
+            android:background="#396964"
             android:elevation="4dp"
             android:orientation="vertical"
             android:paddingLeft="80dp"

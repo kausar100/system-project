@@ -19,7 +19,7 @@ public class TakeCtMarkActivity extends AppCompatActivity {
     private ArrayList<String> mArrData;
     private StdAdapter mAdapter;
     private Button button, ct;
-    EditText editText, editText2;
+    EditText batch;
     Spinner dept, ct_no;
 
     @Override
@@ -31,8 +31,8 @@ public class TakeCtMarkActivity extends AppCompatActivity {
 
         mListview = (ListView) findViewById(R.id.listStudent);
 
-        editText = findViewById(R.id.cttotalstudent);
-        editText2 = findViewById(R.id.ctinitialroll);
+        batch = findViewById(R.id.batchNo);
+
         dept = findViewById(R.id.ctdepartmentID);
         ct_no = findViewById(R.id.ctno);
 
@@ -40,7 +40,7 @@ public class TakeCtMarkActivity extends AppCompatActivity {
         ct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TakeCtMarkActivity.this,ShowCTMarkActivity.class);
+                Intent intent = new Intent(TakeCtMarkActivity.this, ShowCTMarkActivity.class);
                 startActivity(intent);
             }
         });
@@ -62,21 +62,30 @@ public class TakeCtMarkActivity extends AppCompatActivity {
                     return;
                 }
 
-                ListViewItem listViewItem = new ListViewItem(department, ct_num);
-                int tsz = 0;
 
-                try {
-                    tsz = Integer.parseInt(editText.getText().toString());
-                } catch (NumberFormatException nfe) {
-                    System.out.println("Could not parse " + nfe);
+                String bn = batch.getText().toString();
+                if (bn.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Batch Number", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                ListViewItem listViewItem = new ListViewItem(department, ct_num, bn);
+
+                if (department.equals("CSE")) {
+                    bn += ("07001");
+                } else if (department.equals("EEE")) {
+                    bn += ("03001");
+                } else if (department.equals("ME")) {
+                    bn += ("05001");
+                } else if (department.equals("CIVIL")) {
+                    bn += ("01001");
                 }
 
                 int roll = 0;
-                String[] str = new String[tsz];
+                String[] str = new String[120];
 
                 try {
-                    roll = Integer.parseInt(editText2.getText().toString());
-                    for (int i = 0; i < tsz; i++) {
+                    roll = Integer.parseInt(bn);
+                    for (int i = 0; i < 120; i++) {
                         str[i] = Integer.toString(roll++);
                     }
                 } catch (NumberFormatException nfe) {
@@ -84,6 +93,7 @@ public class TakeCtMarkActivity extends AppCompatActivity {
                 }
 
                 mArrData = new ArrayList<String>(Arrays.asList(str));
+
                 // Initialize adapter and set adapter to list view
                 mAdapter = new StdAdapter(TakeCtMarkActivity.this, mArrData, listViewItem);
                 mListview.setAdapter(mAdapter);

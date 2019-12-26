@@ -31,10 +31,7 @@ public class StdAdapter extends BaseAdapter {
     }
 
     public int getCount() {
-        // return the number of records
-//        if(mArrSchoolData.size()==0){
-//            Toast.makeText(mContext,"Cann't Find Related Data in Database.",Toast.LENGTH_SHORT).show();
-//        }
+
         return mArrSchoolData.size();
     }
 
@@ -54,9 +51,12 @@ public class StdAdapter extends BaseAdapter {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 FetchCtMark fetchItem = new FetchCtMark(mArrSchoolData.get(position),mark.getSelectedItem().toString());
-                databaseReference = FirebaseDatabase.getInstance().getReference("CTMARK").child(listViewItem.getDepartment()).child(listViewItem.getCtno());
-                databaseReference.child(mArrSchoolData.get(position)).setValue(fetchItem);
-            }
+                String status = mark.getSelectedItem().toString();
+                if(!status.equals("Choose a Mark")){
+                    databaseReference = FirebaseDatabase.getInstance().getReference("CTMARK").child(listViewItem.getDepartment()).child(listViewItem.getBatch()).child(listViewItem.getCtno());
+                    databaseReference.child(mArrSchoolData.get(position)).setValue(fetchItem);
+                }
+                }
 
             @Override
             public void onNothingSelected(AdapterView<?> adapterView) {

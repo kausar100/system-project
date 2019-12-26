@@ -67,7 +67,9 @@ public class TeacherHomepageActivity extends AppCompatActivity {
                         break;
 
                     case R.id.fileshare:
-                        Toast.makeText(TeacherHomepageActivity.this, "fileshare", Toast.LENGTH_SHORT).show();
+                        Intent it5 = new Intent(getApplicationContext(), FileShareActivity.class);
+                        startActivity(it5);
+                        //Toast.makeText(TeacherHomepageActivity.this, "fileshare", Toast.LENGTH_SHORT).show();
                         break;
 
                     case R.id.request:

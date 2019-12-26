@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@color/design_default_color_primary"
+    android:background="#396964"
     android:orientation="vertical"
     tools:context=".FindTeacherActivity">
 
@@ -32,6 +32,8 @@
             android:hint="Enter Your Teacher name here..." />
 
         <Button
+            android:background="@drawable/round_shape_build"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:id="@+id/search_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

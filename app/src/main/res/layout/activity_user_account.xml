@@ -48,8 +48,9 @@
     </RelativeLayout>
 
     <Button
-        android:background="@drawable/round_shape_build"
+
         android:text="Select and Enter here"
+        android:background="@drawable/round_shape_build"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

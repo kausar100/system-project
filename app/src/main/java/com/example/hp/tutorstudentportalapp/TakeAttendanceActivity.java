@@ -24,7 +24,7 @@ public class TakeAttendanceActivity extends AppCompatActivity {
     private ArrayList<String> mArrData;
     private SchoolAdapter mAdapter;
     private Button button, button2;
-    EditText editText, editText2;
+    EditText batchno;
     Spinner sec, dept;
 
     @Override
@@ -36,8 +36,7 @@ public class TakeAttendanceActivity extends AppCompatActivity {
 
         mListview = (ListView) findViewById(R.id.listSchool);
 
-        editText = findViewById(R.id.totalstudent);
-        editText2 = findViewById(R.id.initialroll);
+        batchno = findViewById(R.id.batchNoID);
         sec = findViewById(R.id.sectionID);
         dept = findViewById(R.id.departmentID);
 
@@ -45,7 +44,7 @@ public class TakeAttendanceActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(TakeAttendanceActivity.this,ShowAttendanceListActivity.class);
+                Intent intent = new Intent(TakeAttendanceActivity.this, ShowAttendanceListActivity.class);
                 startActivity(intent);
             }
         });
@@ -68,29 +67,39 @@ public class TakeAttendanceActivity extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please Choose a Section", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                ListViewItem listViewItem = new ListViewItem(section, department, date);
 
-                int ts = 0;
 
-                try {
-                    ts = Integer.parseInt(editText.getText().toString());
-                } catch (NumberFormatException nfe) {
-                    System.out.println("Could not parse " + nfe);
+                String bn = batchno.getText().toString();
+                if (bn.length() == 0) {
+                    Toast.makeText(getApplicationContext(), "Please Enter Batch Number of Students", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-                final int sz = ts / 2;
-                String[] str = new String[sz];
+
+                ListViewItem listViewItem = new ListViewItem(section, department, date, bn);
+
+                if (department.equals("CSE")) {
+                    bn += ("07001");
+                } else if (department.equals("EEE")) {
+                    bn += ("03001");
+                } else if (department.equals("ME")) {
+                    bn += ("05001");
+                } else if (department.equals("CIVIL")) {
+                    bn += ("01001");
+                }
+
+                String[] str = new String[60];
 
                 int roll = 0;
 
                 try {
-                    roll = Integer.parseInt(editText2.getText().toString());
+                    roll = Integer.parseInt(bn);
                     if ("A".equals(section)) {
-                        for (int i = 0; i < sz; i++) {
+                        for (int i = 0; i < 60; i++) {
                             str[i] = Integer.toString(roll++);
                         }
                     } else if ("B".equals(section)) {
                         roll += 60;
-                        for (int i = 0; i < sz; i++) {
+                        for (int i = 0; i < 60; i++) {
                             str[i] = Integer.toString(roll++);
                         }
 
